@@ -4,22 +4,22 @@
 }
 
 body {
-  background-color: #f5ebdc;
+  background-color: #fff;
   color: #502314;
 }
 
-.fondoNaranja {
+.fondoCart {
   color: #fff;
-  background-color: #ff8533;
+  background-color: #12B4B8;
 }
 
-.fondoRojo{
-  color: #fff;
-  background-color: #d72300;
+.fondoPromo{
+  color: rgb(123, 255, 0);
+  background-color: #282645;
   font-family: 'Rubik Glitch', cursive;
 }
 
-.fondoMarron {
+.fondoFooter {
   color: #fff;
-  background-color: #502314 ;
+  background-color: #6FADF7 ;
 }
