@@ -1,13 +1,16 @@
 import React from "react";
+import {Link} from "react-router-dom"
 
 const Item = ({item}) => {
     return (
-            <div className="card border border-0 body mb-2" >
+        <Link to ={"/item/" + item.id} className="text-decoration-none text-dark"> 
+            <div className="card border border-0 bg-primary mb-2" >
                 <img src={item.imagen} className="card-img-top" alt={item.nombre}/>
                 <div className="card-body text-center">
                     <p className="card-text">{item.nombre}</p>
                 </div>
             </div>
+        </Link>
     )
 
 }

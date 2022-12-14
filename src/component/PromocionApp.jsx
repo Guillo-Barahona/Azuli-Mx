@@ -7,7 +7,7 @@ const PromocionApp = () => {
         <div className="container pt-5">
             <div className="row">
                 <div className="col-md-6 text-center">
-                    <img src={"IMG/tel_banner.png"} alt={"Burguer king app"} width={320}/>
+                    <img src={"/IMG/tel_banner.png"} alt={"Burguer king app"} width={320}/>
                 </div>
 
                 <div className="col-md-6 d-flex align-items-center">

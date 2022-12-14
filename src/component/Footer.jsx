@@ -7,7 +7,7 @@ const Footer = () => {
                 <hr/>
                 <div className="row">
                     <div className="col-md-6">
-                        <img src={"IMG/logo_azuli_slogan_2-1.png"} alt={"Burguer King Footer"} width={192} />
+                        <img src={"/IMG/logo_azuli_slogan_2-1.png"} alt={"Burguer King Footer"} width={192} />
                     </div>
                     <div className="col-md-6 text-end">
                         <p>

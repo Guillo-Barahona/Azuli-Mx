@@ -23,19 +23,22 @@ const ItemCount = ({stockItems}) => {
 
     //funcion boton agregar
     const onAdd = () => {
-        if ((counter <= stock)&& (stock > 0)) {
+        if ((counter <= stock) && (stock > 0)) {
             console.log("Se agregaron: " + counter + " productos al carrito");
             
             setStock(stock - counter); //Resta del stock, lo que se agrega al carrito
-            setCounter (0); // resetea el counter
+            setCounter (1); // resetea el counter
         }
     }
 
+
+
+
     return (
-        <div className="container">
+        <div className="container text-center">
 
             <div className="row mb-3">
-                <div className="col-md-2">
+                <div className="col-md-12">
                     <div className="btn-group" role="group" aria-label="Basic outlined example">
                         <button type="button" className="btn btn-outline-danger" onClick={decrementarStock}>-</button>
                         <button type="button" className="btn btn-outline-dark">{counter}</button>
@@ -45,7 +48,7 @@ const ItemCount = ({stockItems}) => {
             </div>
 
             <div className="row">
-                <div className="col-md-2">
+                <div className="col-md-12">
                     <div className="btn-group" role="group" aria-label="Basic outlined example">
                         <button type="button" className="btn btn-outline-primary" onClick={onAdd}>Agregar al carrito</button>
                     </div>
@@ -58,4 +61,4 @@ const ItemCount = ({stockItems}) => {
     )
 }
 
-export default ItemCount
+export default ItemCount;
