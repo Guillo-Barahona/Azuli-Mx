@@ -1,9 +1,18 @@
 import React from "react";
+import { useEffect } from "react";
 import {useState} from "react";
 
 const ItemCount = ({stockItems}) => {
     const [counter, setCounter] = useState(1);
     const [stock, setStock] = useState(stockItems); //para restar el stock agregado al carrito
+
+
+
+    useEffect (()=>{
+        setStock(stockItems)
+    }, [stockItems]);
+
+
 
     //funcion agregar
     const incrementarStock = () => {

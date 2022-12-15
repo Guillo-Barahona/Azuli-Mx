@@ -19,19 +19,19 @@ const NavBar = () => {
                             <NavLink className="nav-link" aria-current="page" href="/hambuerguesas" to={"/"}>Inicio</NavLink>
                             </li>
                             <li className="nav-item">
-                            <NavLink className="nav-link" aria-current="page" href="/hambuerguesas" to={"/category/carne"}>Carnes</NavLink>
+                            <NavLink className="nav-link" aria-current="page" href="/hambuerguesas" to={"/category/bombas"}>Bombeo</NavLink>
                             </li>
                             <li className="nav-item">
-                            <NavLink className="nav-link" href="/pollo" to={"/category/ensaladas"}>Ensaladas</NavLink>
+                            <NavLink className="nav-link" href="/pollo" to={"/category/piscinas"}>Piscinas</NavLink>
                             </li>
                             <li className="nav-item">
-                            <NavLink className="nav-link" href="/pollo" to={"category/pollo"}>Pollo</NavLink>
+                            <NavLink className="nav-link" href="/pollo" to={"category/tratamiento"}>Tratamiento</NavLink>
                             </li>
                             <li className="nav-item">
-                            <NavLink className="nav-link" href="/papas-fritas" to={"/category/papas"}>Papas</NavLink>
+                            <NavLink className="nav-link" href="/papas-fritas" to={"/category/presion"}>Presion</NavLink>
                             </li>
                             <li className="nav-item">
-                            <NavLink className="nav-link" href="/postres" to={"/category/postres"}>Postres</NavLink>
+                            <NavLink className="nav-link" href="/postres" to={"/category/purificacion"}>Purificacion</NavLink>
                             </li>
                         </ul>
                         </div>
