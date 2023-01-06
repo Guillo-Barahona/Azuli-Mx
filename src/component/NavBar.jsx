@@ -9,29 +9,29 @@ const NavBar = () => {
             <div className="col-md-6">
                 <nav className="navbar navbar-expand-lg">
                     <div className="container-fluid">
-                        <Link className="navbar-brand" href="/"><img src="/IMG/logo_azuli_slogan_2-1.png" alt={"Azuli logo"} width={180} /></Link>
+                        <Link className="navbar-brand" to={"/"}><img src="/IMG/logo_azuli_slogan_2-1.png" alt={"Azuli logo"} width={180} /></Link>
                         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                         </button>
                         <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav">
                             <li className="nav-item">
-                            <NavLink className="nav-link" aria-current="page" href="/hambuerguesas" to={"/"}>Inicio</NavLink>
+                            <NavLink className="nav-link" aria-current="page" to={"/"}>Inicio</NavLink>
                             </li>
                             <li className="nav-item">
-                            <NavLink className="nav-link" aria-current="page" href="/hambuerguesas" to={"/category/bombas"}>Bombeo</NavLink>
+                            <NavLink className="nav-link" aria-current="page" to={"/category/bombas"}>Bombeo</NavLink>
                             </li>
                             <li className="nav-item">
-                            <NavLink className="nav-link" href="/pollo" to={"/category/piscinas"}>Piscinas</NavLink>
+                            <NavLink className="nav-link" to={"/category/piscinas"}>Piscinas</NavLink>
                             </li>
                             <li className="nav-item">
-                            <NavLink className="nav-link" href="/pollo" to={"category/tratamiento"}>Tratamiento</NavLink>
+                            <NavLink className="nav-link" to={"category/tratamiento"}>Tratamiento</NavLink>
                             </li>
                             <li className="nav-item">
-                            <NavLink className="nav-link" href="/papas-fritas" to={"/category/presion"}>Presion</NavLink>
+                            <NavLink className="nav-link" to={"/category/presion"}>Presion</NavLink>
                             </li>
                             <li className="nav-item">
-                            <NavLink className="nav-link" href="/postres" to={"/category/purificacion"}>Purificacion</NavLink>
+                            <NavLink className="nav-link" to={"/category/purificacion"}>Purificacion</NavLink>
                             </li>
                         </ul>
                         </div>
