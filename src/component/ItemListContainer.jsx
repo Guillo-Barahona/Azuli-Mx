@@ -52,7 +52,7 @@ const ItemListContainer = () => {
         const itemsCollection = collection(db, "items");
 
         //const q = query(itemsCollection, where("precio","<",1000));//Filtra del Documento con una condicion
-        const q = id ? query(itemsCollection, where("categoria", "==", id)) : itemsCollection
+        const q = id ? query(itemsCollection, where("categoria", "==", id)) : itemsCollection //se aplica filtro por categoria, o te devuelve el array completo 
         
         getDocs(q).then((snapShot) => {
             setItems(snapShot.docs.map((doc) => ({id:doc.id, ...doc.data()})));
