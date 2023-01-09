@@ -1,4 +1,4 @@
-import { addDoc, collection , getDocs, getFirestore, query, where} from "firebase/firestore";
+import { collection , getDocs, getFirestore, query, where} from "firebase/firestore";
 import React from "react";
 import { useState } from "react";
 import { useEffect } from "react";
