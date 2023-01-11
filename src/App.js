@@ -8,6 +8,7 @@ import PromocionApp from "./component/PromocionApp";
 import Error404 from "./component/Error404";
 import CartContextProvider from "./component/Context/CartContext";
 import Cart from "./component/Cart";
+import Checkout from "./component/Checkout";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
               <Route path={"/category/:id"} element={<ItemListContainer/>}/>
               <Route path={"/item/:id"} element={<ItemDetailContainer/>}/>
               <Route path={"/cart"} element={<Cart />} />
+              <Route path={"/checkout"} element={<Checkout />} />
               <Route path={"*"} element={<Error404/>}/>
             </Routes>
 
