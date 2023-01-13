@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import { CartContext } from "./Context/CartContext";
-import { addDoc, collection, doc, getFirestore, updateDoc, writeBatch } from "firebase/firestore";
+import { addDoc, collection, getFirestore} from "firebase/firestore";
+import { Navigate } from "react-router-dom";
 
 const Checkout = () => {
     const {cart, clear, sumTotal, cartTotal} = useContext(CartContext);
@@ -26,26 +27,8 @@ const Checkout = () => {
 
         const db = getFirestore();
         const ordersCollection = collection(db, "orders"); // se especifica a que coleccion
-        //para agregar los nuevos documentos a la coleccion
-        addDoc(ordersCollection, order).then((snapShot) => {
+        addDoc(ordersCollection, order).then((snapShot) => {//para agregar los nuevos documentos a la coleccion
             setOrderId(snapShot.id);
-            const orderDoc = doc(db, "orders", snapShot.id); //Buscar Documento por ID
-            updateDoc(orderDoc, {total: order.total * 0.85}); //Actualizar Documento // 15% de descuento 
-
-
-
-            // Batch de actualización
-            /* const batch = writeBatch(db);
-            const doc1 = doc(db, "orders", snapShot.id);
-            const doc2 = doc(db, "orders", "VQToooqzITdIzMn4DVIu");
-            const doc3 = doc(db, "orders", "j4a33eWXEBJePoeFCdFb");
-            batch.update(doc1, {quantity:0});
-            batch.update(doc2, {quantity:0});
-            batch.update(doc3, {quantity:0});
-            batch.set(doc3, {total: 10000}); 
-            batch.commit(); */
-
-            
             clear();    //al terminar la compra, se limpia el carrito
         });
     }
@@ -55,26 +38,26 @@ const Checkout = () => {
             <div className="row my-5">
                 <div className="col">
                     <form>
-                        <div class="mb-3">
-                            <label for="nombre" class="form-label">Nombre</label>
-                            <input type="text" class="form-control" id="nombre" placeholder="Ingrese su Nombre" onInput={(e) => {setNombre(e.target.value)}} />
+                        <div className="mb-3">
+                            <label htmlFor="nombre" className="form-label">Nombre</label>
+                            <input type="text" className="form-control" id="nombre" placeholder="Ingrese su Nombre" onInput={(e) => {setNombre(e.target.value)}} />
                         </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="text" class="form-control" id="email" placeholder="Ingrese su Email" onInput={(e) => {setEmail(e.target.value)}} />
+                        <div className="mb-3">
+                            <label htmlFor="email" className="form-label">Email</label>
+                            <input type="text" className="form-control" id="email" placeholder="Ingrese su Email" onInput={(e) => {setEmail(e.target.value)}} />
                         </div>
-                        <div class="mb-3">
-                            <label for="telefono" class="form-label">Teléfono</label>
-                            <input type="text" class="form-control" id="telefono" placeholder="Ingrese su Teléfono" onInput={(e) => {setTelefono(e.target.value)}} />
+                        <div className="mb-3">
+                            <label htmlFor="telefono" className="form-label">Teléfono</label>
+                            <input type="text" className="form-control" id="telefono" placeholder="Ingrese su Teléfono" onInput={(e) => {setTelefono(e.target.value)}} />
                         </div>
-                        <button type="button" onClick={generarOrden} class="btn fondoCart">Generar Orden</button>
+                        <button type="button" onClick={generarOrden} className="btn fondoCart">Generar Orden</button>
                     </form>
                 </div>
 
 
 
                 <div className="col">
-                    <table class="table">
+                    <table className="table">
                         <tbody>
                             
                             {cart.map(item => ( //para imprimir los productos en ;a pantalla
@@ -100,12 +83,7 @@ const Checkout = () => {
 
             <div className="row my-5">
                 <div className="col text-center">
-                    
-                    {orderId ? <div class="alert alert-success" role="alert"> {/* render de si existe o no una orden */}
-                        <h1>Felicitaciones!</h1>
-                        <p>Tu Número de Orden es: {orderId}</p>
-                    </div> : ""}
-
+                    {orderId ? <Navigate to={"/thankyou/" + orderId} /> : ""}
                 </div>
             </div>
         </div>
